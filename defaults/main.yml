@@ -1,0 +1,9 @@
+---
+# defaults file for packer
+
+packer_app: packer
+packer_version: 1.4.3
+packer_osarch: linux_amd64
+packer_dl_url: https://releases.hashicorp.com
+packer_dl_loc: /tmp
+packer_bin_path: /usr/local/bin
