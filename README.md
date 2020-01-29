@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/darkwizard242/ansible-role-packer.svg?branch=master)](https://travis-ci.com/darkwizard242/ansible-role-packer) ![Ansible Role](https://img.shields.io/ansible/role/43173?color=dark%20green%20) ![Ansible Role](https://img.shields.io/ansible/role/d/43173?label=role%20downloads) ![Ansible Quality Score](https://img.shields.io/ansible/quality/43173?label=ansible%20quality%20score) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-packer&metric=alert_status)](https://sonarcloud.io/dashboard?id=ansible-role-packer) ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/darkwizard242/ansible-role-packer?label=release) ![GitHub repo size](https://img.shields.io/github/repo-size/darkwizard242/ansible-role-packer?color=orange&style=flat-square)
+
 # Ansible Role: Packer
 
 Role to install (_by default_) `packer` package on **Debian/Ubuntu** and **EL** systems.
