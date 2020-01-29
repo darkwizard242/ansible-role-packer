@@ -12,7 +12,7 @@ services:
 env:
   global:
     - ROLE_NAME: packer
-  matrix:
+  jobs:
     - DISTRO: centos-8
     - DISTRO: centos-7
     - DISTRO: ubuntu-18.04
