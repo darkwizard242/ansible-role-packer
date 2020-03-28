@@ -2,7 +2,7 @@
 galaxy_info:
   role_name: packer
   author: Ali Muhammad
-  description: Installs/Uninstalls 'packer' for crating golden images for multiple platforms.
+  description: Installs/Uninstalls 'packer' for creating golden images for multiple platforms.
   company: none
   license: MIT
   min_ansible_version: 2.4
