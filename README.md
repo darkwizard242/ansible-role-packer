@@ -2,7 +2,7 @@
 
 # Ansible Role: Packer
 
-Role to install (_by default_) `packer` package on **Debian/Ubuntu** and **EL** systems.
+Role to install (_by default_) [packer](https://packer.io/) package on **Debian/Ubuntu** and **EL** systems.
 
 ## Requirements
 
@@ -45,7 +45,7 @@ For default behaviour of role (i.e. installation of **packer**) in ansible playb
 ```yaml
 - hosts: servers
   roles:
-    - role: darkwizard242.packer
+    - darkwizard242.packer
 ```
 
 For customizing behavior of role (i.e. specifying the desired **packer** version) in ansible playbooks.
@@ -53,9 +53,9 @@ For customizing behavior of role (i.e. specifying the desired **packer** version
 ```yaml
 - hosts: servers
   roles:
-    - role: darkwizard242.packer
-      vars:
-        packer_version: 1.5.4
+    - darkwizard242.packer
+  vars:
+    packer_version: 1.5.4
 ```
 
 For customizing behavior of role (i.e. placing binary of **packer** package in different location) in ansible playbooks.
@@ -63,9 +63,9 @@ For customizing behavior of role (i.e. placing binary of **packer** package in d
 ```yaml
 - hosts: servers
   roles:
-    - role: darkwizard242.packer
-      vars:
-        packer_bin_path: /bin/
+    - darkwizard242.packer
+  vars:
+    packer_bin_path: /bin/
 ```
 
 ## License
