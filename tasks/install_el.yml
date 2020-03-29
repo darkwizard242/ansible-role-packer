@@ -1,30 +1,30 @@
 ---
 # tasks file for packer
 
-- name: Downloading archive for {{ packer_app }} {{ packer_version }} temporarily to {{ packer_dl_loc }} on EL based systems
+- name: "Downloading archive for {{ packer_app }} {{ packer_version }} temporarily to {{ packer_dl_loc }} on EL based systems"
   get_url:
     url: "{{ packer_dl_url }}/{{ packer_app }}/{{ packer_version }}/{{ packer_app }}_{{ packer_version }}_{{ packer_osarch }}.zip"
     dest: "{{ packer_dl_loc }}"
-- name: Gather package facts to verify if unzip is installed on EL based systems
-  package_facts:
-    manager: rpm
-- name: Temporarily install unzip on EL based systems if currently not in installed state on EL based systems.
+# - name: Gather package facts to verify if unzip is installed on EL based systems
+#   package_facts:
+#     manager: rpm
+- name: Install unzip if it is currently not in installed state on EL based systems.
   yum:
     name: unzip
     state: present
     update_cache: yes
-  when: packages['unzip'] is not defined
+  # when: packages['unzip'] is not defined
 - name: "{{ packer_app }}_unarchive on EL based systems"
   unarchive:
     src: "{{ packer_dl_loc }}/{{ packer_app }}_{{ packer_version }}_{{ packer_osarch }}.zip"
     dest: "{{ packer_bin_path }}"
     remote_src: true
-- name: Uninstalling unzip from Debian based systems as it was originally not in installed state on EL based systems.
-  yum:
-    name: unzip
-    state: absent
-  when: packages['unzip'] is not defined
-- name: "{{ packer_app }}_archive_removal on EL based systems"
+# - name: Uninstalling unzip from Debian based systems as it was originally not in installed state on EL based systems.
+#   yum:
+#     name: unzip
+#     state: absent
+#   when: packages['unzip'] is not defined
+- name: "Remove {{ packer_app }} archive from EL based systems"
   file:
     path: "{{ packer_dl_loc }}/{{ packer_app }}_{{ packer_version }}_{{ packer_osarch }}.zip"
     state: absent
