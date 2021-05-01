@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: packer
-  author: Ali Muhammad
+  author: darkwizard242
   description: Installs/Uninstalls 'packer' for creating golden images for multiple platforms.
   company: none
   license: MIT
