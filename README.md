@@ -16,7 +16,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 packer_app: packer
-packer_version: 1.7.3
+packer_version: 1.7.4
 packer_osarch: linux_amd64
 packer_dl_url: https://releases.hashicorp.com
 packer_dl_loc: /tmp
@@ -28,7 +28,7 @@ packer_bin_path: /usr/local/bin
 Variable        | Value (default)                  | Description
 --------------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------
 packer_app      | packer                           | Defines the app to install i.e. **packer**
-packer_version  | 1.7.3                            | Defined to dynamically fetch the desired version to install. Defaults to: **1.7.3**
+packer_version  | 1.7.4                            | Defined to dynamically fetch the desired version to install. Defaults to: **1.7.4**
 packer_osarch   | linux_amd64                      | Defines os architecture. Used for obtaining the correct type of binaries based on OS System Architecture. Defaults to: **linux_amd64**
 packer_dl_url   | <https://releases.hashicorp.com> | Defines URL to download the packer binary from.
 packer_dl_loc   | /tmp                             | Defined to dynamically set where to place the binary archive for `packer` temporarily. Defaults to: **/tmp**
