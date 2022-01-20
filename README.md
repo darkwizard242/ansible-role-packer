@@ -16,23 +16,31 @@ Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 packer_app: packer
-packer_version: 1.7.8
-packer_osarch: linux_amd64
+packer_version: 1.7.9
+packer_os: linux
+packer_arch: amd64
 packer_dl_url: https://releases.hashicorp.com
 packer_dl_loc: /tmp
 packer_bin_path: /usr/local/bin
+packer_file_owner: root
+packer_file_group: root
+packer_file_mode: '0755'
 ```
 
 ### Variables table:
 
-Variable        | Value (default)                  | Description
---------------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------
-packer_app      | packer                           | Defines the app to install i.e. **packer**
-packer_version  | 1.7.8                            | Defined to dynamically fetch the desired version to install. Defaults to: **1.7.8**
-packer_osarch   | linux_amd64                      | Defines os architecture. Used for obtaining the correct type of binaries based on OS System Architecture. Defaults to: **linux_amd64**
-packer_dl_url   | <https://releases.hashicorp.com> | Defines URL to download the packer binary from.
-packer_dl_loc   | /tmp                             | Defined to dynamically set where to place the binary archive for `packer` temporarily. Defaults to: **/tmp**
-packer_bin_path | /usr/local/bin                   | Defined to dynamically set the appropriate path to store packer binary into. Defaults to (as generally available on any user's PATH): **/usr/local/bin**
+Variable          | Description
+----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------
+packer_app        | Defines the app to install i.e. **packer**
+packer_version    | Defined to dynamically fetch the desired version to install. Defaults to: **1.7.9**
+packer_os         | Defines os type. Used for obtaining the correct type of binaries based on OS type. Defaults to: **linux**
+packer_arch       | Defines os architecture. Used to set the correct type of binaries based on OS System Architecture. Defaults to: **amd64**
+packer_dl_url     | Defines URL to download the packer binary from.
+packer_dl_loc     | Defined to dynamically set where to place the binary archive for `packer` temporarily. Defaults to: **/tmp**
+packer_bin_path   | Defined to dynamically set the appropriate path to store packer binary into. Defaults to (as generally available on any user's PATH): **/usr/local/bin**
+packer_file_owner | Owner for the binary file of packer.
+packer_file_group | Group for the binary file of packer.
+packer_file_mode  | Mode for the binary file of packer.
 
 ## Dependencies
 

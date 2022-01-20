@@ -3,33 +3,26 @@
 
 - name: EL Family | Downloading archive for {{ packer_app }} {{ packer_version }} temporarily to {{ packer_dl_loc }}
   get_url:
-    url: "{{ packer_dl_url }}/{{ packer_app }}/{{ packer_version }}/{{ packer_app }}_{{ packer_version }}_{{ packer_osarch }}.zip"
+    url: "{{ packer_dl_url }}/{{ packer_app }}/{{ packer_version }}/{{ packer_app }}_{{ packer_version }}_{{ packer_os }}_{{ packer_arch }}.zip"
     dest: "{{ packer_dl_loc }}"
 
-# - name: Gather package facts to verify if unzip is installed on EL based systems
-#   package_facts:
-#     manager: rpm
 
 - name: EL Family | Install unzip if it is currently not in installed state
   yum:
     name: unzip
     state: present
     update_cache: yes
-    # when: packages['unzip'] is not defined
 
-- name: EL Family | {{ packer_app }}_unarchive
+- name: EL Family | Unarchive {{ packer_app }} {{ packer_version }}
   unarchive:
-    src: "{{ packer_dl_loc }}/{{ packer_app }}_{{ packer_version }}_{{ packer_osarch }}.zip"
+    src: "{{ packer_dl_loc }}/{{ packer_app }}_{{ packer_version }}_{{ packer_os }}_{{ packer_arch }}.zip"
     dest: "{{ packer_bin_path }}"
+    owner: "{{ packer_file_owner }}"
+    group: "{{ packer_file_group }}"
+    mode: "{{ packer_file_mode }}"
     remote_src: true
-
-# - name: Uninstalling unzip from Debian based systems as it was originally not in installed state
-#   yum:
-#     name: unzip
-#     state: absent
-#   when: packages['unzip'] is not defined
 
 - name: EL Family | Remove {{ packer_app }} archive
   file:
-    path: "{{ packer_dl_loc }}/{{ packer_app }}_{{ packer_version }}_{{ packer_osarch }}.zip"
+    path: "{{ packer_dl_loc }}/{{ packer_app }}_{{ packer_version }}_{{ packer_os }}_{{ packer_arch }}.zip"
     state: absent
