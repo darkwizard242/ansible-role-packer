@@ -2,7 +2,7 @@
 # defaults file for packer
 
 packer_app: packer
-packer_version: 1.9.3
+packer_version: 1.9.4
 packer_os: linux
 packer_arch: amd64
 packer_dl_url: https://releases.hashicorp.com
