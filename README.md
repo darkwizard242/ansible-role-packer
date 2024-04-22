@@ -1,4 +1,4 @@
-[![build-test](https://github.com/darkwizard242/ansible-role-packer/workflows/build-and-test/badge.svg?branch=master)](https://github.com/darkwizard242/ansible-role-packer/actions?query=workflow%3Abuild-and-test) [![release](https://github.com/darkwizard242/ansible-role-packer/workflows/release/badge.svg)](https://github.com/darkwizard242/ansible-role-packer/actions?query=workflow%3Arelease) ![Ansible Role](https://img.shields.io/ansible/role/43173?color=dark%20green%20) ![Ansible Role](https://img.shields.io/ansible/role/d/43173?label=role%20downloads) ![Ansible Quality Score](https://img.shields.io/ansible/quality/43173?label=ansible%20quality%20score) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-packer&metric=alert_status)](https://sonarcloud.io/dashboard?id=ansible-role-packer) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-packer&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=ansible-role-packer) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-packer&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=ansible-role-packer) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-packer&metric=security_rating)](https://sonarcloud.io/dashboard?id=ansible-role-packer) ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/darkwizard242/ansible-role-packer?label=release) ![GitHub repo size](https://img.shields.io/github/repo-size/darkwizard242/ansible-role-packer?color=orange&style=flat-square)
+[![build-test](https://github.com/darkwizard242/ansible-role-packer/workflows/build-and-test/badge.svg?branch=master)](https://github.com/darkwizard242/ansible-role-packer/actions?query=workflow%3Abuild-and-test) [![release](https://github.com/darkwizard242/ansible-role-packer/workflows/release/badge.svg)](https://github.com/darkwizard242/ansible-role-packer/actions?query=workflow%3Arelease) ![Ansible Role](https://img.shields.io/ansible/role/d/darkwizard242/packer) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-packer&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=ansible-role-packer) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-packer&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=ansible-role-packer) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-packer&metric=security_rating)](https://sonarcloud.io/dashboard?id=ansible-role-packer) ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/darkwizard242/ansible-role-packer?label=release) ![GitHub repo size](https://img.shields.io/github/repo-size/darkwizard242/ansible-role-packer?color=orange&style=flat-square)
 
 # Ansible Role: Packer
 
@@ -16,7 +16,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 packer_app: packer
-packer_version: 1.10.2
+packer_version: 1.10.3
 packer_os: linux
 packer_arch: amd64
 packer_dl_url: https://releases.hashicorp.com
@@ -32,7 +32,7 @@ packer_file_mode: '0755'
 Variable          | Description
 ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------
 packer_app        | Defines the app to install i.e. **packer**
-packer_version    | Defined to dynamically fetch the desired version to install. Defaults to: **1.10.2**
+packer_version    | Defined to dynamically fetch the desired version to install. Defaults to: **1.10.3**
 packer_os         | Defines os type. Used for obtaining the correct type of binaries based on OS type. Defaults to: **linux**
 packer_arch       | Defines os architecture. Used to set the correct type of binaries based on OS System Architecture. Defaults to: **amd64**
 packer_dl_url     | Defines URL to download the packer binary from.
