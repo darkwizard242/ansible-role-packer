@@ -3,7 +3,7 @@
 
 - name: EL Family | Downloading archive for {{ packer_app }} {{ packer_version }} temporarily to {{ packer_dl_loc }}
   ansible.builtin.get_url:
-    url: "{{ packer_dl_url }}/{{ packer_app }}/{{ packer_version }}/{{ packer_app }}_{{ packer_version }}_{{ packer_os }}_{{ packer_arch }}.zip"
+    url: "{{ packer_dl_url }}/{{ packer_app }}/{{ packer_version }}/{{ packer_app }}_{{ packer_version }}_{{ packer_os }}_{{ packer_architecture_map[ansible_architecture] }}.zip"
     dest: "{{ packer_dl_loc }}"
 
 
@@ -15,7 +15,7 @@
 
 - name: EL Family | Unarchive {{ packer_app }} {{ packer_version }}
   ansible.builtin.unarchive:
-    src: "{{ packer_dl_loc }}/{{ packer_app }}_{{ packer_version }}_{{ packer_os }}_{{ packer_arch }}.zip"
+    src: "{{ packer_dl_loc }}/{{ packer_app }}_{{ packer_version }}_{{ packer_os }}_{{ packer_architecture_map[ansible_architecture] }}.zip"
     dest: "{{ packer_bin_path }}"
     owner: "{{ packer_file_owner }}"
     group: "{{ packer_file_group }}"
@@ -24,5 +24,5 @@
 
 - name: EL Family | Remove {{ packer_app }} archive
   ansible.builtin.file:
-    path: "{{ packer_dl_loc }}/{{ packer_app }}_{{ packer_version }}_{{ packer_os }}_{{ packer_arch }}.zip"
+    path: "{{ packer_dl_loc }}/{{ packer_app }}_{{ packer_version }}_{{ packer_os }}_{{ packer_architecture_map[ansible_architecture] }}.zip"
     state: absent
