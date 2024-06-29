@@ -3,8 +3,16 @@
 
 packer_app: packer
 packer_version: 1.11.0
-packer_os: linux
-packer_arch: amd64
+packer_os: "{{ ansible_system | lower }}"
+packer_architecture_map:
+  amd64: amd64
+  arm: arm64
+  x86_64: amd64
+  armv6l: armv6
+  armv7l: armv7
+  aarch64: arm64
+  32-bit: "386"
+  64-bit: amd64
 packer_dl_url: https://releases.hashicorp.com
 packer_dl_loc: /tmp
 packer_bin_path: /usr/local/bin
