@@ -16,7 +16,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 packer_app: packer
-packer_version: 1.14.1
+packer_version: 1.14.2
 packer_os: "{{ ansible_system | lower }}"
 packer_architecture_map:
   amd64: amd64
@@ -40,7 +40,7 @@ packer_file_mode: '0755'
 Variable                | Description
 ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------
 packer_app              | Defines the app to install i.e. **packer**
-packer_version          | Defined to dynamically fetch the desired version to install. Defaults to: **1.14.1**
+packer_version          | Defined to dynamically fetch the desired version to install. Defaults to: **1.14.2**
 packer_os               | Defines os type. Used for obtaining the correct type of binaries based on OS type.
 packer_architecture_map | Defines os architecture. Used to set the correct type of binaries based on OS System Architecture.
 packer_dl_url           | Defines URL to download the packer binary from.
